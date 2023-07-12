@@ -1,16 +1,18 @@
 <form class="form">
   <div class="mb-3">
     <input
-    name="Name"
-    type="text"
-    class="form-control"
-    id="name"
-    placeholder="Nombre"
-    [(ngModel)]="userModel.name"
+      required
+      name="Name"
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Nombre"
+      [(ngModel)]="userModel.name"
     />
   </div>
   <div class="mb-3">
     <input
+      required
       name="LastName"
       type="text"
       class="form-control"
@@ -20,17 +22,19 @@
     />
   </div>
   <div class="mb-3">
-    <input 
-    name="Email"
-    type="email" 
-    class="form-control" 
-    id="email" 
-    placeholder="Email" 
-    [(ngModel)]="userModel.email"
+    <input
+      required
+      name="Email"
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="Email"
+      [(ngModel)]="userModel.email"
     />
   </div>
   <div class="mb-3">
     <input
+      required
       name="Password"
       type="password"
       class="form-control"
@@ -43,5 +47,10 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div> -->
-  <button type="submit" class="btn btn-outline-light">Enviar</button>
+  <button type="submit" class="btn btn-outline-light" (click)="onSubmit()">
+    Enviar
+  </button>
+  <p class="pt-3" *ngIf="registrado">
+    Usuario {{ userModel.name }} {{ mensaje }}
+  </p>
 </form>

@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class UsuarioComponent {
   constructor() {}
+  registrado = false
+  mensaje=''
 
   userModel = {
     email: '',
@@ -16,6 +18,7 @@ export class UsuarioComponent {
   };
 
   onSubmit(): void {
-    console.log(this.userModel);
+    this.registrado = true
+    this.mensaje="usuario registrado con éxito"
   }
 }
