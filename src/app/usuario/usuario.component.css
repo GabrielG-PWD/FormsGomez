@@ -8,4 +8,5 @@
 
 .form input {
   background-color: var(--secondaryBGColor);
+  color: black;
 }

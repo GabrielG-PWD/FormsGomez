@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" method="POST">
   <div class="mb-3">
     <input
       required
@@ -43,14 +43,11 @@
       [(ngModel)]="userModel.password"
     />
   </div>
-  <!-- <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div> -->
-  <button type="submit" class="btn btn-outline-light" (click)="onSubmit()">
-    Enviar
-  </button>
-  <p class="pt-3" *ngIf="registrado">
+  <input type="submit" class="btn btn-outline-light" value="Registrar" (click)="onSubmit()"/>
+  <p class="pt-3" *ngIf="registrado; else sinRegistrar ">
     Usuario {{ userModel.name }} {{ mensaje }}
   </p>
+  <ng-template #sinRegistrar>
+    <p class="pt-3">Complete los campos para registrar</p>
+  </ng-template>
 </form>
